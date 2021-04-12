@@ -1,0 +1,45 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('../../media/grapes.jpg');
+    background-size: cover;
+    color: #333;
+    height: calc(100vh - 201px);
+    font-family: 'Roboto Slab', serif;
+}
+
+#wine-logo {
+    width: 57%!important;
+}
+
+.shop-now-btn {
+    background: red;
+    color: white;
+    min-width: 210px;
+}
+
+.shop-now-btn:hover,
+.shop-now-btn:active,
+.shop-now-btn:focus {
+    background: orange;
+}
+
+/* --- Media Queries --- */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .fixed-top-lg-screens {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 15;
+    }
+}
