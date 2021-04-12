@@ -26,6 +26,10 @@ body {
     background: orange;
 }
 
+.red-bg {
+    background: red!important;
+}
+
 /* --- Media Queries --- */
 
 @media (min-width: 1200px) {
