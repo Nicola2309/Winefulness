@@ -30,6 +30,30 @@ body {
     background: red!important;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+/* --- Products.html styles --- */
+
+.btt-button {
+    height: 27px;
+    width: 27px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* --- Media Queries --- */
 
 @media (max-width: 991px) {

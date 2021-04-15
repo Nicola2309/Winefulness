@@ -5,7 +5,7 @@
         <p class="my-0">Search</p>
     </a>
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form class="form" method="GET" action="">
+        <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
                 <input type="text" class="form-control border rounded-0" name="q" placeholder="Search our Offers">
                 <div class="input-group-append">
@@ -30,7 +30,7 @@
     <div class="dropdown-menu border-0" aria-labelledby="user-ops">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="" class="dropdown-item">Product Menagement</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Product Menagement</a>
             {% endif %}
             <a href="" class="dropdown-item">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

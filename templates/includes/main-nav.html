@@ -5,22 +5,22 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="" class="dropdown-item">By Category</a>
-                <a href="" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a href="#" class="logo-font font-weight-bold nav-link mr-5">
+            <a href="#" class="logo-font font-weight-bold nav-link mr-5" id="wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wines
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="producers-link">
-                <a href="" class="dropdown-item">Red</a>
-                <a href="" class="dropdown-item">White</a>
-                <a href="" class="dropdown-item">Sparkling</a>
-                <a href="" class="dropdown-item">All Wines</a>
+                <a href="{% url 'products' %}?category=red" class="dropdown-item">Red</a>
+                <a href="{% url 'products' %}?category=white" class="dropdown-item">White</a>
+                <a href="{% url 'products' %}?category=sparkling" class="dropdown-item">Sparkling</a>
+                <a href="{% url 'products' %}?category=red,white,sparkling" class="dropdown-item">All Wines</a>
             </div>
         </li>
 
