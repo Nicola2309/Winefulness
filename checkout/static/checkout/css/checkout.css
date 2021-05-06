@@ -37,3 +37,7 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+.card-img{
+    width: 121px;
+}

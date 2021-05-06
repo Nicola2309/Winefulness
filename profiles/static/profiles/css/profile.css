@@ -19,3 +19,7 @@
 #id_default_country option:first-child {
     color: #aac6d2;
 }
+
+.card-img{
+    width: 121px;
+}

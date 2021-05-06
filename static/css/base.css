@@ -58,6 +58,10 @@ input[name='q']::placeholder {
     color: #aac6d2;
 }
 
+.card-img{
+    width: 121px;
+}
+
 /* ---- Bootstrap toasts ---- */
 
 .message-container {
@@ -209,6 +213,11 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* --- Singup Page --- */
+.signup label {
+    display: block;
+}
+
 
 /* --- Media Queries --- */
 
@@ -224,12 +233,3 @@ input[name='q']::placeholder {
     }
 }
 
-@media (min-width: 992px) {
-    .fixed-top-lg-screens {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 15;
-    }
-}
