@@ -65,7 +65,7 @@ def all_wines(request):
 def wine_details(request, product_id):
     """ A view to show individual wine bottles details """
 
-    product = get_obejct_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
