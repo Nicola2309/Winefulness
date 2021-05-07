@@ -25,8 +25,8 @@ card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var html = `
-            <span role='alert'>
-                <i class='fas fa-times'></i>
+            <span role="alert">
+                <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
         `;
@@ -76,7 +76,6 @@ form.addEventListener('submit', function(ev) {
     shipping: {
             name: $.trim(form.full_name.value),
             phone: $.trim(form.phone_number.value),
-            email: $.trim(form.email.value),
             address: {
                 line1: $.trim(form.street_address1.value),
                 line2: $.trim(form.street_address2.value),
@@ -91,17 +90,17 @@ form.addEventListener('submit', function(ev) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
             var html = `
-                <span role='alert'>
-                    <i class='fas fa-times'></i>
+                <span role="alert">
+                    <i class="fas fa-times"></i>
                 </span>
-                <span>${event.error.message}</span>`;
+                <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
             $('#payment-form').fadeToggle(100);
             $('#loading-overlay').fadeToggle(100);
             card.update({ 'disabled': false });
             $('#submit-button').attr('disabled', false);
         } else {
-          if (result.paymentInten.status === 'succeded') {
+          if (result.paymentIntent.status === 'succeeded') {
               form.submit();
           }
         }

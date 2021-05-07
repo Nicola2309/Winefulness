@@ -7,8 +7,9 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
-from profiles.models import UserProfile
+
 from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from bag.contexts import bag_contents
 
 import stripe
@@ -25,7 +26,7 @@ def cache_checkout_data(request):
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
-        return HttpResponse(satus=200)
+        return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
@@ -51,8 +52,6 @@ def checkout(request):
             'county': request.POST['county'],
         }
 
-        print(stripe_public_key)
-
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -64,14 +63,15 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=item_data,
+                            order=order,
+                            product=product,
+                            quantity=item_data,
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our shop"
+                        "One of the products in your bag wasn't found in \
+                            our shop"
                         "Please contact us for assistance!"
                     ))
                     order.delete()
