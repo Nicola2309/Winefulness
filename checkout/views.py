@@ -51,6 +51,8 @@ def checkout(request):
             'county': request.POST['county'],
         }
 
+        print(stripe_public_key)
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -61,13 +63,12 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=item_data,
+                    )
+                    order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our shop"
@@ -146,7 +147,7 @@ def checkout_success(request, order_number):
         # Save the user's info
         if save_info:
             profile_data = {
-                'defaul_phone_number': order.phone_number,
+                'default_phone_number': order.phone_number,
                 'default_country': order.country,
                 'default_postcode': order.postcode,
                 'default_town_or_city': order.town_or_city,
@@ -162,10 +163,10 @@ def checkout_success(request, order_number):
         Your order number is {order_number}, A confirmation \
         email will be sent to {order.email}.')
 
-    if 'bag' in request.sesion:
+    if 'bag' in request.session:
         del request.session['bag']
 
-    template = 'checkout/checkout.html'
+    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
     }

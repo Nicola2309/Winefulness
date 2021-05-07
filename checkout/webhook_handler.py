@@ -41,13 +41,13 @@ class StripeWH_Handler:
             content=f'Unhandled Webhook Received: {event["type"]}',
             status=200)
 
-    def handle_payment_intent_succeded(self, event):
-        """ Handle the payment_intent.succeded webhook from Stripe """
+    def handle_payment_intent_succeeded(self, event):
+        """ Handle the payment_intent.succeeded webhook from Stripe """
 
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
-        save_info = intent.metadata, save_info
+        save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -94,7 +94,7 @@ class StripeWH_Handler:
                 order_exists = True
                 break
             except Order.DoesNotExist:
-                attempt +=1
+                attempt += 1
                 time.sleep(1)
         if order_exists:
             self._send_confirmation_email(order)
@@ -115,7 +115,7 @@ class StripeWH_Handler:
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
-                    grad_total=grand_total,
+                    grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
@@ -128,6 +128,14 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
+                    else:
+                        for quantity in item_data:
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                            )
+                            order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()

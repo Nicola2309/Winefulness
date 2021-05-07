@@ -1,6 +1,6 @@
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
-var stripe = Stripe(stripe_public_key);
+var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 var style = {
   base: {
@@ -48,7 +48,7 @@ form.addEventListener('submit', function(ev) {
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     // From using {% csrf_token %} in the form
-    car csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
@@ -109,5 +109,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         // reload the page in case of failure, prompt a django message
         location.reload();
-    })
+    });
 });
