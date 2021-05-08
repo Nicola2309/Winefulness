@@ -27,7 +27,7 @@ select option[value=""] {
     width: 100%;
     height: 100%;
     background-color: rgba(243, 41, 64, 0.7);
-    z-index: 99;
+    z-index: 99000;
 }
 
 .loading-spinner {
