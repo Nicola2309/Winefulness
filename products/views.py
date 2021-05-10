@@ -86,9 +86,10 @@ def add_products(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('wine_details', args=[product.id]))
+            return redirect(reverse('add_products'))
         else:
-            messages.error(request, 'Failed to add product, ensure that the form is valid.')
+            messages.error(request, 'Failed to add product, \
+                ensure that the form is valid.')
     else:
         form = ProductForm()
 
@@ -101,7 +102,7 @@ def add_products(request):
 
 
 @login_required
-def edit_product(request, product_id):
+def edit_products(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -121,7 +122,7 @@ def edit_product(request, product_id):
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
 
-    template = 'products/edit_product.html'
+    template = 'products/edit_products.html'
     context = {
         'form': form,
         'product': product,
