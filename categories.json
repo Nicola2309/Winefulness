@@ -1,0 +1,1 @@
+[{"model": "products.category", "pk": 1, "fields": {"name": "red", "friendly_name": "Red Wine"}}, {"model": "products.category", "pk": 2, "fields": {"name": "white", "friendly_name": "White"}}, {"model": "products.category", "pk": 3, "fields": {"name": "sparkling", "friendly_name": "Sparkling"}}]
