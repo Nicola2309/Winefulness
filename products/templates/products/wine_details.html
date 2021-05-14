@@ -29,7 +29,7 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="wine-details-container mb-5 mt-5">
                 <p class="mb-0">{{ product.name }}</p>
-                <p class="lead mb-0 font-weight-bold text-left">${{ product.price }}</p>
+                <p class="lead mb-0 font-weight-bold text-left">€{{ product.price }}</p>
                  {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a href="{% url 'products' %}?category={{ product.category.name }}">
