@@ -1,6 +1,6 @@
 from django import forms
 from products.widgets import CustomClearableFileInput
-from .models import Winemakers
+from .models import Winemakers, Comments
 
 
 class WinemakersForm(forms.ModelForm):
@@ -11,3 +11,9 @@ class WinemakersForm(forms.ModelForm):
 
     image = forms.ImageField(
         label='Image', required=False, widget=CustomClearableFileInput)
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comments
+        fields = ['comment', ]
