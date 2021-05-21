@@ -15,12 +15,12 @@
     {% for wm in winemakers %}
     <div class="row">
         <div class="col-12 col-md-5">
-            <a href="">
+            <a href="{% url 'winemaker_detail' wm.id %}">
                 <img class="mb-3" src="{{ wm.image.url }}" alt="{{wm.title}}">
             </a>
         </div>
         <div class="col-12 col-md-7 wm-name">
-            <a href="">
+            <a href="{% url 'winemaker_detail' wm.id %}">
                 <h5><strong>{{ wm.title }}</strong></h5>
                 <p class="wm-description mt-3">{{ wm.description }}</p>
             </a>
@@ -28,12 +28,12 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <a class="btn text-white" href="">
+            <a class="btn text-white" href="{% url 'winemaker_detail' wm.id %}">
                 <span class="text-bold">Read More</span>
             </a>
             {% if request.user.is_superuser %}
-            <a class="mt-3" href="">Edit</a>
-            <a class="text-info pl-4 mt-2" href="">Delete</a>
+            <a class="mt-3" href="{% url 'edit_winemaker' wm.id %}">Edit</a>
+            <a class="text-info pl-4 mt-2" href="{% url 'delete_winemaker' wm.id %}">Delete</a>
             {% endif %}
         </div>
     </div>
