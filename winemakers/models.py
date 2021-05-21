@@ -20,7 +20,7 @@ class Winemakers(models.Model):
 
 class Comments(models.Model):
     winemakers = models.ForeignKey(
-        'News', null=True, blank=True, on_delete=models.SET_NULL)
+        'Winemakers', null=True, blank=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL,
         null=True, blank=True, default='Anonymous')
