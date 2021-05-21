@@ -8,22 +8,24 @@ body {
     color: #333;
     height: calc(100vh - 201px);
     font-family: 'Roboto Slab', serif;
+    min-height: 100vh;
 }
 
 #wine-logo {
-    width: 57%!important;
+    width: 42%!important;
 }
 
 .shop-now-btn {
     background: red;
     color: white;
+    font-size: 1.8rem;
     min-width: 210px;
 }
 
 .shop-now-btn:hover,
 .shop-now-btn:active,
 .shop-now-btn:focus {
-    background: orange;
+    background: pink;
 }
 
 .red-bg {
@@ -38,6 +40,43 @@ body {
 	position: fixed;
 	background: white;
 	z-index: -1;
+}
+
+.logo-font{
+    color: #fff;
+}
+
+/* --- Footer --- */
+
+.page-footer{
+    margin-top: 24px;
+    position: sticky;
+    top: 100%;
+}
+
+.footer-row {
+    display: block;
+    background-color: red;
+    text-align: center;
+}
+
+.footer-row h5 {
+    color: white;
+}
+
+.footer-copyright {
+    text-align: center;
+    background-color: #ff0000e0;
+}
+
+.footer-copyright h6{
+    color: white;
+}
+
+.social-icon{
+    color: white;
+    font-size: 2.2rem;
+    margin: 10px;
 }
 
 /* --- Products.html styles --- */
@@ -228,6 +267,7 @@ input[name='q']::placeholder {
 
     .logo-font {
         font-size: 2rem;
+        color: #fff;
     }
 
     .nav-link {
@@ -254,6 +294,14 @@ input[name='q']::placeholder {
     .btn.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
+    }
+
+    .shop-now-btn{
+        background: red;
+        margin: 5px 5px;
+        padding: .375rem .375rem;
+        font-size: 1.8rem;
+        color: white;
     }
 
     .increment-qty, .decrement-qty {

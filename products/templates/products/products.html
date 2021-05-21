@@ -143,7 +143,7 @@
             var selector = $(this);
             var currentUrl = new URL(window.location);
 
-            var selectedVal = sleector.val();
+            var selectedVal = selector.val();
             if(selectedVal != 'reset'){
                 var sort = selectedVal.split("_")[0];
                 var direction = selectedVal.split("_")[1];
