@@ -6,7 +6,7 @@ body {
     background: url('../../media/grapes.jpg');
     background-size: cover;
     color: #333;
-    height: calc(100vh - 201px);
+    height: auto;
     font-family: 'Roboto Slab', serif;
     min-height: 100vh;
 }
@@ -15,17 +15,44 @@ body {
     width: 42%!important;
 }
 
+.nav-link {
+        color: #1f2c21;
+    }
+
+.nav-link:hover {
+    color: #BE3644;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,0.7);
+    font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #BE3644;
+}
+
+.dropdown-item {
+    color: rgba(0,0,0,0.7) !important;
+    font-weight: 600 !important;
+}
+
+.dropdown-item:hover {
+    color: #BE3644 !important;
+}
+
 .shop-now-btn {
-    background: red;
+    border-radius: 9px;
+    background: #fd172f;
     color: white;
-    font-size: 1.8rem;
-    min-width: 210px;
+    font-size: 1.4rem;
+    min-width: 182px;
 }
 
 .shop-now-btn:hover,
 .shop-now-btn:active,
 .shop-now-btn:focus {
-    background: pink;
+    background: #FFC2FF;
 }
 
 .red-bg {
@@ -43,7 +70,34 @@ body {
 }
 
 .logo-font{
-    color: #fff;
+    color: #523838;
+}
+
+.subutton-text-color {
+    border-radius: 9px !important;
+    background-color: #242424 !important;
+    padding: 9px !important;
+}
+
+.subutton-text-color:hover {
+    font-weight: 800 !important;
+    color: #ff5e6e !important;
+}
+
+
+/* --- Register Page --- */
+
+.allauth-form-inner-content a {
+    color: #BE3644 !important;
+}
+
+.allauth-form-inner-content input {
+    width: 112%;
+    height: 36px;
+}
+
+.signup label {
+    display: none !important;
 }
 
 /* --- Wine Detail Page --- */
@@ -92,6 +146,13 @@ body {
     color: white;
     font-size: 2rem;
     margin: 10px;
+    
+}
+
+.social-icon:hover,
+.social-icon:active,
+.social-icon:focus {
+    color: #00C7FE ;
 }
 
 .footer-copyright {
@@ -329,6 +390,12 @@ input[name='q']::placeholder {
 
     .review-card {
         width: 100%;
+    }
+}
+
+@media (min-width: 1367px) {
+    body {
+        height: 130vh;
     }
 }
 
