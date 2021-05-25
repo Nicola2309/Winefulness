@@ -90,6 +90,42 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col text-center add-review-link">
+            <!-- Add Review Link -->
+            <a href="{% url 'add_review' product.id %}" class=" mb-3">Add Review<i class="fas fa-plus ml-2"></i></a>
+            <p>
+                <!-- Read Reviews Button -->
+                <a class="btn mt-3" data-toggle="collapse" href="#collapseReview" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <span class="text-uppercase">Read Reviews</span>
+                </a>
+            </p>
+            <!-- Review Card -->
+            <div class="collapse review-card" id="collapseReview">
+                {% if product.reviews.count > 0 %}
+                {% for review in product.reviews.all %}
+                <div class="card card-body mb-2">
+                    <!-- Review Rating -->
+                    <p class="review-card-content"><small>{{ review.review_rating }} / 5 <i class="fas fa-star"></i></small></p>
+                    <!-- Review User and Date-->
+                    <p><small class="text-muted">{{ review.user_profile }} | {{ review.created_on }}</small></p>
+                    <!-- Review Title -->
+                    <h5 class="card-title">{{ review.review_title }}</h5>
+                    <!-- Reivew Content -->
+                    <p class="card-text">{{ review.review_content }}</p>
+                </div>
+                {% endfor %}
+                {% else %}
+                <!-- If no review -->
+                <div class="card card-body mb-2">
+                    <h5 class="card-title">This product does not currently have any reviews</h5>
+                    <p class="card-text">Already purchased this product? Please help others and add a review</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
 
 

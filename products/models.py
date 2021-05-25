@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 
 # Create your models here.
 
@@ -31,6 +32,14 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True,
                                 blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def calculate_rating(self):
+        """
+        Calculate rating from reviews
+        """
+        self.rating = self.reviews.aggregate(Avg("review_rating"))[
+            'review_rating__avg']
+        self.save()
 
     def __str__(self):
         return self.name
