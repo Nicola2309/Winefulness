@@ -29,7 +29,7 @@ body {
 }
 
 .red-bg {
-    background: red!important;
+    background: #be3644!important;
 }
 
 .overlay {
@@ -56,7 +56,7 @@ body {
 
 .footer-row {
     display: block;
-    background-color: red;
+    background-color: #be3644;
     text-align: center;
 }
 
@@ -75,8 +75,12 @@ body {
 
 .social-icon{
     color: white;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 10px;
+}
+
+.footer-copyright {
+    padding: 4px;
 }
 
 /* --- Products.html styles --- */
