@@ -18,7 +18,7 @@
         <div class="col text-center">
             <h2>Our Wines</h2>
             {% for c in current_categories %}
-            <a class="text-decoration-none" href="{% url 'product' %}?category={{ c.name }}">
+            <a class="text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                 <span class="p-2 mt-2 badge badge-white rounded-0 border border-dark">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
@@ -48,7 +48,7 @@
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
                             <span class="small"><a href="{% url 'products' %}">Wines Assortment</a> | </span>
                         {% endif %}
-                        {{ prodcuts|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
                 </div>
             </div>

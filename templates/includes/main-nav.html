@@ -1,12 +1,12 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font text-bold nav-link mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a href="#" class="logo-font font-weight-bold nav-link mr-5" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="logo-font text-bold nav-link mr-5" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -18,20 +18,20 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a href="#" class="logo-font font-weight-bold nav-link mr-5" id="wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="logo-font text-bold nav-link mr-5" id="wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wines
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="producers-link">
-                <a href="{% url 'products' %}?category=red" class="dropdown-item">Red</a>
-                <a href="{% url 'products' %}?category=white" class="dropdown-item">White</a>
-                <a href="{% url 'products' %}?category=sparkling" class="dropdown-item">Sparkling</a>
-                <a href="{% url 'products' %}?category=red,white,sparkling" class="dropdown-item">All Wines</a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?categories=red" class="dropdown-item">Red</a>
+                <a href="{% url 'products' %}?categories=white" class="dropdown-item">White</a>
+                <a href="{% url 'products' %}?categories=sparkling" class="dropdown-item">Sparkling</a>
+                <a href="{% url 'products' %}?categories=red,white,sparkling" class="dropdown-item">All Wines</a>
             </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a href="#" class="logo-font font-weight-bold nav-link mr-5" id="wine-boxes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Delivery service
+        <li class="nav-item">
+            <a href="{% url 'winemakers' %}" class="logo-font text-bold nav-link mr-5" id="wm-link" aria-haspopup="true">
+                Our Wine Producers
             </a>
         </li>
     </ul>

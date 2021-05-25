@@ -10,20 +10,21 @@
                 <img class="mt-4 mb-2" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
                 </a>
                 {% else %}
-                <a href="{{ winemakers.image.url }}">
+                <a href="{{ MEDIA_URL }}noimage.png">
                 <img class="mt-4 mb-2" src="{{ MEDIA_URL }}noimage.png" 
                     alt="{{ winemakers.title }}">
                 </a>
                 {% endif %}
             </div>
             <div class="col-12">
-                <h4 class="mb-4 text-bold mt-2">{{ winemakers.titles.title }}</h4>
+                <h4 class="mb-4 text-bold mt-2">{{ winemakers.title }}</h4>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
 {% block content %}
+<div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -37,7 +38,7 @@
         <div class="col-12 d-flex justify-content-center mb-4 mt-4">
             <a class="btn" 
                 href="{% url 'winemakers' %}">
-            <span class="text-bold">Back to winemakers</span>
+            <span class="text-bold">Back to Winemakers</span>
             </a>
         </div>
     </div>

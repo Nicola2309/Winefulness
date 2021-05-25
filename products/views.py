@@ -9,9 +9,6 @@ from .models import Product, Category
 from .forms import ProductForm
 
 
-# Create your views here.
-
-
 def all_wines(request):
     """ A view to show all wines """
 
@@ -36,8 +33,9 @@ def all_wines(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
+        # import pdb; pdb.set_trace()
+        if 'categories' in request.GET:
+            categories = request.GET['categories'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
