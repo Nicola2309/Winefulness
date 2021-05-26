@@ -45,6 +45,15 @@ body {
     color: #BE3644 !important;
 }
 
+.form-background{
+    background-color: #c3ffaf6b;
+    box-shadow: 2px 4px 4px 4px #a4a4a4;
+}
+
+.btn-success {
+    padding: 9px;
+}
+
 .shop-now-btn {
     border-radius: 9px;
     background: #fd172f;
@@ -78,6 +87,7 @@ body {
 }
 
 .subutton-text-color {
+    color: white;
     border-radius: 9px !important;
     background-color: #242424 !important;
     padding: 9px !important;
@@ -90,17 +100,19 @@ body {
 
 .site-nav-btn,
 .allauth-form-inner-content .site-nav-btn {
-    color: #242424 !important;
+    color: #be3644 !important;
     border-radius: 9px;
     padding: 9px !important;
     margin-right: 9px;
-    border: 2px solid #242424;
+    border: 2px solid #be3644;
 }
 
 .site-nav-btn:hover,
 .allauth-form-inner-content .site-nav-btn:hover {
     font-weight: 800 !important;
     background-color: #be3644 !important;
+    border: 2px solid #242424;
+    color: #242424 !important;
 }
 
 .form-check-input {
@@ -146,6 +158,11 @@ body {
     text-decoration: none;
 }
 
+/* --- Winemakers Detail Page --- */
+
+.winemaker-image {
+    width: 100%;
+}
 
 
 /* --- Wine Detail Page --- */
@@ -244,6 +261,10 @@ input[name='q']::placeholder {
 
 .toast-capper {
     height: 2px;
+}
+
+.toast {
+    background-color: rgba(255, 255, 269);
 }
 
 /* ---- from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ ---- */
@@ -435,6 +456,16 @@ input[name='q']::placeholder {
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .cards {
+        padding: 10px;
+    }
+    .review-card {
+        width: 100%;
+    }
+}
+
 
 @media (min-width: 1367px) {
     body {

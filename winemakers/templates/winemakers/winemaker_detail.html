@@ -6,11 +6,11 @@
             <div class="col-12 text-center">
                 {% if winemakers.image %}
                 <a href="{{ winemakers.image.url }}" target="_blank">
-                <img class="mt-4 mb-2" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
+                <img class="mt-4 mb-2 winemaker-image" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
                 </a>
                 {% else %}
                 <a href="{{ MEDIA_URL }}noimage.png" target="_blank">
-                <img class="mt-4 mb-2" src="{{ MEDIA_URL }}noimage.png" 
+                <img class="mt-4 mb-2 winemaker-image" src="{{ MEDIA_URL }}noimage.png" 
                     alt="{{ winemakers.title }}">
                 </a>
                 {% endif %}
@@ -70,7 +70,7 @@
 <div class="container mt-2">
     <div class="row">
         <div class="col-6">
-            <h2 class="mt-3 mb-3">Comments</h2>
+            <h2 class="mt-3 mb-3 text-font">Comments</h2>
         </div>
     </div>
 </div>

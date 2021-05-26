@@ -2,6 +2,10 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container">
     <div class="row">
@@ -17,7 +21,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font">Wine Bag</h2>
+            <h2 class="logo-font text-uppercase text-font">Wine Bag</h2>
             <hr>
         </div>
     </div>

@@ -24,19 +24,19 @@
             <div class="col-12 col-md-5">
                 {% if winemakers.image %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                <img class="mt-4 mb-2 producer-pic" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
+                <img class="mt-4 mb-4 pr-4 producer-pic" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
                 </a>
                 {% else %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                <img class="mt-4 mb-2 producer-pic" src="{{ MEDIA_URL }}noimage.png" 
+                <img class="mt-4 mb-5 pr-4 producer-pic" src="{{ MEDIA_URL }}noimage.png" 
                         alt="{{ winemakers.title }}">
                 </a>
                 {% endif %}
             </div>
-            <div class="col-12 col-md-7 wm-content">
+            <div class="col-12 col-md-7 wm-content pl-3">
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                    <h5 class="text-font wm-name"><strong>{{ wm.title }}</strong></h5>
-                    <p class="wm-description mt-3">{{ wm.location }}</p>
+                    <h5 class="text-font pl-4 wm-name"><strong>{{ wm.title }}</strong></h5>
+                    <p class="wm-description pl-4 mt-3">{{ wm.location }}</p>
                 </a>
             </div>
         </div>
@@ -47,7 +47,7 @@
                 </a>
                 {% if request.user.is_superuser %}
                 <a class="site-nav-btn" href="{% url 'edit_winemaker' wm.id %}">Edit</a>
-                <a class="text-info pl-4 mt-2" href="{% url 'delete_winemaker' wm.id %}">Delete</a>
+                <a class="text-danger pl-4 mt-2" href="{% url 'delete_winemaker' wm.id %}">Delete</a>
                 {% endif %}
             </div>
         </div>

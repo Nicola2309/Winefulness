@@ -40,3 +40,13 @@ select option[value=""] {
 .card-img{
     width: 121px;
 }
+
+/* ----- bag page ----- */
+
+.increment-qty {
+    background-color: rgba(208, 37, 55, 1);
+}
+
+.decrement-qty {
+    background-color: rgba(208, 37, 55, .5);
+}
