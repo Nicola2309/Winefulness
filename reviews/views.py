@@ -28,7 +28,7 @@ def add_review(request, product_id):
                 review_rating=review_rating,
                 review_content=review_content)
             messages.success(request, 'Successfully addded review.')
-            return redirect(reverse('product_detail', args=[product.id]))
+            return redirect(reverse('wine_details', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. \
                     Please check the form is valid and try again.')
