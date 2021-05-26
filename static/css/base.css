@@ -12,7 +12,7 @@ body {
 }
 
 #wine-logo {
-    width: 42%!important;
+    width: 62%!important;
 }
 
 .nav-link {
@@ -84,6 +84,24 @@ body {
     color: #ff5e6e !important;
 }
 
+.site-nav-btn,
+.allauth-form-inner-content .site-nav-btn {
+    color: #242424 !important;
+    padding: 9px !important;
+    margin-right: 9px;
+    border: 2px solid #242424;
+}
+
+.site-nav-btn:hover,
+.allauth-form-inner-content .site-nav-btn:hover {
+    font-weight: 800 !important;
+    background-color: #be3644 !important;
+}
+
+.form-check-input {
+    width: auto !important;
+    height: auto !important;
+}
 
 /* --- Register Page --- */
 
@@ -98,6 +116,20 @@ body {
 
 .signup label {
     display: none !important;
+}
+
+/* --- Winemakers Page --- */
+.producer-pic {
+    width: 100%;
+    box-shadow: 2px 4px 4px 4px #a4a4a4;
+}
+
+.wm-content {
+    margin-top: 1.4rem;
+}
+
+.wm-name{
+    text-decoration: none;
 }
 
 /* --- Wine Detail Page --- */
@@ -330,11 +362,6 @@ input[name='q']::placeholder {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
-}
-
-/* --- Singup Page --- */
-.signup label {
-    display: block;
 }
 
 

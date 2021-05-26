@@ -13,6 +13,8 @@
     {% endblock %}    
 
     {% block corecss %}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Rokkitt&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Rubik&display=swap" rel="stylesheet">
@@ -71,7 +73,8 @@
                         <div class="dropdown-menu border-0" aria-labelledby="search-ops">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_products' %}" class="dropdown-item">Product Menagement</a>
+                                <a href="{% url 'add_products' %}" class="dropdown-item">Product Menagement</a>
+                                <a href="{% url 'add_winemaker' %}" class="dropdown-item">Add Wine Producer</a>
                                 {% endif %}
                                 <a href="{% url 'profiles' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
