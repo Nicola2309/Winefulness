@@ -6,7 +6,7 @@ class WinemakersAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'heading',
-        'description',
+        'location',
         'content',
         'image',
     )

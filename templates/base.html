@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -74,7 +73,7 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'add_products' %}" class="dropdown-item">Product Menagement</a>
-                                <a href="{% url 'add_winemaker' %}" class="dropdown-item">Add Wine Producer</a>
+                                <a href="{% url 'add_winemakers' %}" class="dropdown-item">Add Wine Producer</a>
                                 {% endif %}
                                 <a href="{% url 'profiles' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

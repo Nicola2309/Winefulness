@@ -52,7 +52,7 @@ def add_winemakers(request):
                  Please ensure the form is valid.')
     else:
         form = WinemakersForm()
-    template = 'winemakers/add_winemakers.html'
+    template = 'winemakers/add_winemaker.html'
     context = {
         'form': form,
     }
