@@ -160,10 +160,19 @@ body {
     text-decoration: none;
 }
 
+
 /* --- Winemakers Detail Page --- */
 
 .winemaker-image {
     width: 100%;
+    max-width: 618px;
+}
+
+
+/* --- Productss Page --- */
+.card-img-top {
+    height: 408px;
+    width: auto;
 }
 
 

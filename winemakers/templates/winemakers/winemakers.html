@@ -24,11 +24,11 @@
             <div class="col-12 col-md-5">
                 {% if winemakers.image %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                <img class="mt-4 mb-4 pr-4 producer-pic" src="{{ winemakers.image.url }}" alt="{{ winemakers.producer_name }}">
+                <img class="mt-4 mb-4 pr-4 winemaker-image" src="{{ winemakers.image.url }}" alt="{{ winemakers.producer_name }}">
                 </a>
                 {% else %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                <img class="mt-4 mb-5 pr-4 producer-pic" src="{{ MEDIA_URL }}noimage.png" 
+                <img class="mt-4 mb-5 pr-4 winemaker-image" src="{{ MEDIA_URL }}noimage.png" 
                         alt="{{ winemakers.producer_name }}">
                 </a>
                 {% endif %}
