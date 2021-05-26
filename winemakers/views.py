@@ -80,7 +80,7 @@ def edit_winemaker(request, winemaker_id):
                 Please ensure that the form is valid.')
     else:
         form = WinemakersForm(instance=wm)
-        messages.info(request, f'You are editing {wm.title}')
+        messages.info(request, f'You are editing {wm.producer_name}')
 
     template = 'winemakers/edit_winemaker.html'
     context = {

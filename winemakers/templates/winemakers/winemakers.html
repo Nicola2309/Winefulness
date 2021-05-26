@@ -24,18 +24,18 @@
             <div class="col-12 col-md-5">
                 {% if winemakers.image %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                <img class="mt-4 mb-4 pr-4 producer-pic" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
+                <img class="mt-4 mb-4 pr-4 producer-pic" src="{{ winemakers.image.url }}" alt="{{ winemakers.producer_name }}">
                 </a>
                 {% else %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
                 <img class="mt-4 mb-5 pr-4 producer-pic" src="{{ MEDIA_URL }}noimage.png" 
-                        alt="{{ winemakers.title }}">
+                        alt="{{ winemakers.producer_name }}">
                 </a>
                 {% endif %}
             </div>
             <div class="col-12 col-md-7 wm-content pl-3">
                 <a href="{% url 'winemaker_detail' wm.id %}">
-                    <h5 class="text-font pl-4 wm-name"><strong>{{ wm.title }}</strong></h5>
+                    <h5 class="text-font pl-4 wm-name"><strong>{{ wm.producer_name }}</strong></h5>
                     <p class="wm-description pl-4 mt-3">{{ wm.location }}</p>
                 </a>
             </div>

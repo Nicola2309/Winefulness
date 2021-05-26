@@ -4,7 +4,7 @@ from .models import Winemakers, Comments
 
 class WinemakersAdmin(admin.ModelAdmin):
     list_display = (
-        'title',
+        'producer_name',
         'heading',
         'location',
         'content',

@@ -3,21 +3,18 @@
 {% block page_header %}
 <div class="container">
     <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-{% block content %}
-<div class="overlay"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col">
             <!-- Page Heading -->
             <hr>
             <h2 class="text-uppercase text-font mb-4">Add Review</h2>
             <hr>
         </div>
     </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="overlay"></div>
+<div class="container form-background">
     <div class="row">
         <div class="col-12 col-md-6">
             <!-- Form to add review -->
@@ -25,10 +22,10 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-right">
-                    <!-- Cancel button -->
-                    <a href="{% url 'wine_details' product.id %}" class="btn">Cancel</a>
                     <!-- Submit button -->
-                    <button type="submit" class="btn">Add Review</button>
+                    <button type="submit" class="btn subutton-text-color">Add Review</button>
+                    <!-- Cancel button -->
+                    <a href="{% url 'wine_details' product.id %}" class="btn site-nav-btn">Cancel</a>
                 </div>
             </form>
         </div>

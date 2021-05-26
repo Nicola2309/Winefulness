@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="mt-4 mb-3 logo-font text-font text-uppercase">Product Management</h2>
+            <h2 class="mt-4 mb-3 logo-font text-font text-uppercase">Producers Management</h2>
             <hr>
         </div>
     </div>
@@ -22,8 +22,8 @@
             <form class="mb-4" method="POST" action="{% url 'add_winemakers' %}" id="add-wm-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <a class="btn" href="{% url 'winemakers' %}">Cancel</a>
                 <button class="btn subutton-text-color" type="submit">Add Producer</button>
+                <a class="btn site-nav-btn" href="{% url 'winemakers' %}">Cancel</a>
             </form>
         </div>
     </div>

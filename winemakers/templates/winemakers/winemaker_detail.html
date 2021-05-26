@@ -6,17 +6,17 @@
             <div class="col-12 text-center">
                 {% if winemakers.image %}
                 <a href="{{ winemakers.image.url }}" target="_blank">
-                <img class="mt-4 mb-2 winemaker-image" src="{{ winemakers.image.url }}" alt="{{ winemakers.title }}">
+                <img class="mt-4 mb-2 winemaker-image" src="{{ winemakers.image.url }}" alt="{{ winemakers.producer_name }}">
                 </a>
                 {% else %}
                 <a href="{{ MEDIA_URL }}noimage.png" target="_blank">
                 <img class="mt-4 mb-2 winemaker-image" src="{{ MEDIA_URL }}noimage.png" 
-                    alt="{{ winemakers.title }}">
+                    alt="{{ winemakers.producer_name }}">
                 </a>
                 {% endif %}
             </div>
             <div class="col-12">
-                <h4 class="mb-4 text-font wm-name mt-2"><strong>{{ winemakers.title }}</strong></h4>
+                <h4 class="mb-4 text-font wm-name mt-2"><strong>{{ winemakers.producer_name }}</strong></h4>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
     </div>
 </div>
 {% if request.user.is_authenticated %}
-<div class="container mb-5 mt-5">
+<div class="container mb-5 mt-5 form-background">
     <div class="row">
         <div class="col-12 col-md-6 offset-md-3 text-center">
             <h4 class="mt-4 mb-4 text-bold">
@@ -85,12 +85,12 @@
             {% if request.user == comment.user %}
             <ul class="mt-5">
                 <li class="d-inline">
-                    <a href="{% url 'edit_comment' winemakers.pk comment.pk %}" class="update-link btn text-font"><small>
+                    <a href="{% url 'edit_comment' winemakers.pk comment.pk %}" class="update-link btn text-font site-nav-btn"><small>
                     Edit</small>
                     </a>
                 </li>
                 <li class="d-inline">
-                    <a href="{% url 'delete_comment' winemakers.pk comment.pk %}" class="remove-item btn text-bold"><span><small>Remove</small> <i class="far fa-trash-alt"></i></span>
+                    <a href="{% url 'delete_comment' winemakers.pk comment.pk %}" class="remove-item btn text-bold text-danger"><span><small>Remove</small> <i class="far fa-trash-alt"></i></span>
                     </a>
                 </li>
             </ul>
