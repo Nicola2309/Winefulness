@@ -83,14 +83,14 @@ body {
 	z-index: -1;
 }
 
-.logo-font{
+.title-font{
     color: #523838;
 }
 
 .subutton-text-color {
     color: white;
     border-radius: 9px !important;
-    background-color: #242424 !important;
+    background-color: #523838 !important;
     padding: 9px !important;
 }
 
@@ -114,7 +114,7 @@ body {
     font-weight: 900 !important;
     background-color: #be3644 !important;
     border: 2px solid #242424;
-    color: #242424 !important;
+    color: #523838 !important;
 }
 
 .form-check-input {
@@ -152,11 +152,11 @@ body {
 }
 
 .wm-content a {
-    color: #1f2c21;
+    color: #523838;
 }
 
 .wm-content a:hover {
-    color: #1f2c21;
+    color: #BE3644;
     text-decoration: none;
 }
 
@@ -420,9 +420,8 @@ input[name='q']::placeholder {
         height: calc(100vh - 201px);
     }
 
-    .logo-font {
-        font-size: 2rem;
-        color: #fff;
+    .title-font {
+        font-size: 1.5rem;
     }
 
     .nav-link {
