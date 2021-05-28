@@ -23,7 +23,7 @@ If the users won't make an account the ability to puchase remains and they can p
     - [Icons](#Icons)
 - [Information Architecture](#Information-Architecture)
     - [Database](#Database)
-    - [Data Schema](#Data-Schema)
+    - [Data Models](#Data-Models)
 - [Technologies Used](#Technologies-Used)
     - [Languages](#Languages)
     - [Tools](#Tools)
@@ -258,9 +258,8 @@ As part of the Milestone Project 4 it was a requirement that a relational databa
 | Name        | Database Key | Field Type          | Validation                                                    |
 | ----------- | ------------ | ------------------- | ------------------------------------------------------------- |
 | Winemakers  | winemakers  | models.ForeignKey  | 'Winemakers', null=True, blank=True, on_delete=models.SET_NULL  |
-| User  | user | models.ForeignKey  | User, on_delete=models.SET_NULL,
-        null=True, blank=True, default='Anonymous'  |
-| Comment  | comment  | models.TextField  |               |
+| User  | user | models.ForeignKey  | User, on_delete=models.SET_NULL,  |  null=True, blank=True, default='Anonymous'  |
+| Comment  | comment  | models.TextField  |               
 | Date Time  | date_time  | models.DateTimeField  | auto_now_add=True,  |
 
 #### Checkout app
@@ -317,27 +316,56 @@ As part of the Milestone Project 4 it was a requirement that a relational databa
 
 ### Languages 
 
-* [HTML5](https://en.wikipedia.org/wiki/HTML5) - HTML5 was used to create the main strucure of the site. 
-* [CSS3](https://en.wikipedia.org/wiki/CSS) - CSS3 was used for styling.
-* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - JavaScript was used to provide interactive functionality.
-* [Python](https://www.python.org/) - Python was used to interact with the backend.  
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) 
+    - HTML5 was used to create the main strucure of the site. 
+* [CSS3](https://en.wikipedia.org/wiki/CSS) 
+    - CSS3 was used for styling.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
+    - JavaScript was used to provide interactive functionality.
+* [Python](https://www.python.org/) 
+    - Python was used to interact with the backend.  
 
 ### Libraries, frameworks, databases and editors
 
-* [Bootstrap](https://getbootstrap.com/) - Bootstrap was used for various components throughout the site as well as the responsive grid system to ensure the site is fully responsive accross all screen sizes.
-* [Font Awesome](https://fontawesome.com/) - This was used to import the icons of the website. 
-* [Github](https://github.com/) - This was used to store the repository for my website and host it on Github pages.
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) - Throughout the development of my website I made use of Git version control to ensure all changes and additions to my code were added to the repository. 
-* [Gitpod](https://gitpod.io/) - This was used to write all code for the website. 
-* [JQuery](https://jquery.com/) - I used JQuery to write some of the Javascript code for the website. 
-* [Google images](https://www.google.com/imghp?hl=EN) - This was used to find all of the images for the website.
-* [SQLite](https://www.sqlite.org/index.html) - This databse was used during development.
-* [PostgreSQL](https://www.postgresql.org/) - This is the database used in deployment.
-* [Stripe](https://stripe.com/en-gb) - This was used for the payment system in the checkout app.
-* [Django](https://www.djangoproject.com/) - This was used as the main framework to develop the site with Python. 
+* [Bootstrap](https://getbootstrap.com/) 
+    - Bootstrap was used for various components throughout the site as well as the responsive grid system to ensure the site is fully responsive accross all screen sizes.
+* [Font Awesome](https://fontawesome.com/) 
+    - This was used to import the icons of the website. 
+* [Github](https://github.com/) 
+    - This was used to store the repository for my website and host it on Github pages.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) 
+    - Throughout the development of my website I made use of Git version control to ensure all changes and additions to my code were added to the repository. 
+* [Gitpod](https://gitpod.io/) 
+    - This was used to write all code for the website. 
+* [JQuery](https://jquery.com/) 
+    - I used JQuery to write some of the Javascript code for the website. 
+* [Pixabay](https://pixabay.com/) 
+    - This was used to find the hero image for the website.
+* [SQLite](https://www.sqlite.org/index.html) 
+    - This databse was used during development.
+* [PostgreSQL](https://www.postgresql.org/) 
+    - This is the database used in deployment.
+* [Stripe](https://stripe.com/en-gb) 
+    - This was used for the payment system in the checkout app.
+* [Django](https://www.djangoproject.com/) 
+    - This was used as the main framework to develop the site with Python. 
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+    - Django Crispy Forms allowed me to efficiently style the Django forms used throughout the site.
+* [Gunicorn](https://gunicorn.org/)
+    - The Python WSGI (Web Server Gateway Interface) HTTP Server used in deployment to Heroku.
+* [Psycopg2](https://pypi.org/project/psycopg2/)
+    - Psycopg2 was used to adapt Python to the PostgreSQL database.
 
 ### Tools 
 
+* [Stripe](https://stripe.com/en-se)
+    - Stripe was used to add the secure payment feature to the site.
+* [AWS S3 Bucket](https://aws.amazon.com/s3/)
+    - I used Amazon's S3 Bucket to store my static files, including local CSS and image files.
+* [Google Fonts](https://fonts.google.com/)
+* [Figma](https://www.figma.com/) 
+    - Figma helped me design my project, by creating wireframes for desktop, tablet and mobile devices. 
+* [FontAwesome](https://fontawesome.com/) 
 * [Am I Responsive](http://ami.responsivedesign.is/) 
     - This was used to show how my website is responsive across all screen sizes. 
 * [Free Online HTML Formatter](https://www.freeformatter.com/html-formatter.html) 
