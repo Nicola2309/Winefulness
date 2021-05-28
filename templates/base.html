@@ -101,7 +101,7 @@
               </div>
           </div>
           <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100 fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -155,6 +155,12 @@
                </div>
             </div>
          </div>
+         <!-- Back To Top Button -->
+        <div class="btt-button shadow-sm rounded-0 border border-black">
+            <a href="" class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up btt-icon mx-auto my-auto"></i>
+            </a>
+        </div>
 
 
          <div class="footer-copyright">
@@ -168,6 +174,29 @@
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
+
+    <!-- Back To Top Button JS -->
+        <script type="text/javascript">
+            // Code snippet from fellow student https://github.com/Gregory4321/cooks_finest | Edited class name and scroll speed
+            $(document).ready(function () {
+            
+                //Check to see if the window is top if not then display button
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 200) {
+                        $('.btt-button').fadeIn();
+                    } else {
+                        $('.btt-button').fadeOut();
+                    }
+                });
+            
+                //Click event to scroll to top
+                $('.btt-link').click(function (e) {
+                    $('html, body').animate({ scrollTop: 0 }, 800);
+                    return false;
+                });
+            
+            });
+        </script>
     {% endblock %}
 
   </body>
