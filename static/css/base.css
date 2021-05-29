@@ -122,10 +122,79 @@ body {
     height: auto !important;
 }
 
-.card-img-bag {
-    margin: 51px auto 51px 51px;
-    height: 290px;
-    width: auto;
+
+/* ---- Classes, colors copied from Bootstrap ---- */
+
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ---- Bootstrap toasts ---- */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 9191991;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.toast {
+    background-color: rgba(255, 255, 255);
+}
+
+/* ---- from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ ---- */
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
 }
 
 /* --- Register Page --- */
@@ -143,7 +212,88 @@ body {
     display: none !important;
 }
 
+/* --- Products Page --- */
+.card-img-top {
+    height: 408px;
+    width: auto;
+}
+
+input[name='q']::placeholder {
+    color: #aac6d2;
+}
+
+/* --- Product Form --- */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+
+/* --- Product Detail Page --- */
+
+.add-review-link a:hover i {
+    color: #ff5e6e;
+}
+
+.review-card {
+    margin: 2rem auto;
+    width: 75%;
+}
+
+.review-card-content {
+    margin-bottom: 0.40rem;
+}
+
+.increment-qty {
+    background-color: rgba(208, 37, 55, 1);
+}
+
+.decrement-qty {
+    background-color: rgba(208, 37, 55, .5);
+}
+
+.card-img {
+    height: 400px;
+    width: auto;
+}
+
+/* --- Bag Page ---*/
+
+.card-img-bag {
+    /* also in checkout page*/
+    margin: 51px auto 51px 51px;
+    height: 290px;
+    width: auto;
+}
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* --- Winemakers Page --- */
+
 .producer-pic {
     width: 100%;
     box-shadow: 2px 4px 4px 4px #a4a4a4;
@@ -172,37 +322,6 @@ body {
 .winemaker-image {
     width: 100%;
     max-width: 618px;
-}
-
-
-/* --- Productss Page --- */
-.card-img-top {
-    height: 408px;
-    width: auto;
-}
-
-
-/* --- Wine Detail Page --- */
-
-.add-review-link a:hover i {
-    color: red;
-}
-
-.review-card {
-    margin: 2rem auto;
-    width: 75%;
-}
-
-.review-card-content {
-    margin-bottom: 0.25rem;
-}
-
-.increment-qty {
-    background-color: rgba(208, 37, 55, 1);
-}
-
-.decrement-qty {
-    background-color: rgba(208, 37, 55, .5);
 }
 
 /* --- Footer --- */
@@ -249,111 +368,9 @@ body {
     padding: 4px;
 }
 
-/* --- Products.html styles --- */
-
-.btt-button {
-    height: 54px;
-    width: 54px;
-    position: fixed;
-    bottom: 21px;
-    right: 30px;
-    background-color: #00C7FE;
-    color: white;
-}
-
-.btt-button:hover {
-    background-color:  rgb(5, 155, 197);
-}
-
-.btt-button:hover .btt-icon {
-    font-size: 1.7rem;
-    color: white;
-}
-
-.btt-link {
-    cursor: pointer;
-}
-
-input[name='q']::placeholder {
-    color: #aac6d2;
-}
-
-
-/* ---- Bootstrap toasts ---- */
-
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
-    z-index: 9191991;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
-}
-
-.toast {
-    background-color: rgba(255, 255, 255);
-}
-
-/* ---- from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ ---- */
-
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
-}
-
-/* ---- Classes, colors copied from Bootstrap ---- */
-
-.arrow-primary {
-    border-bottom-color: #007bff !important;
-}
-
-.arrow-secondary {
-    border-bottom-color: #6c757d !important;
-}
-
-.arrow-success {
-    border-bottom-color: #28a745 !important;
-}
-
-.arrow-danger {
-    border-bottom-color: #dc3545 !important;
-}
-
-.arrow-warning {
-    border-bottom-color: #ffc107 !important;
-}
-
-.arrow-info {
-    border-bottom-color: #17a2b8 !important;
-}
-
-.arrow-light {
-    border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40 !important;
-}
-
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
 
 /* --- Allauth form formatting --- */
+
 .allauth-form-inner-content p {
     margin-top: 1.7rem;
     color: #1f2c21;
@@ -405,33 +422,60 @@ input[name='q']::placeholder {
     color: #28b6a8;
 }
 
-/* --- Product Form --- */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
+/* --- Toast Success --*/
+.toast-img{
+    height: 76px;
+    margin-left: 12px;
 }
 
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
+/* --- Modal message styling --- */
+.modal-header {
+    display: block !important;
+}
+
+.modal-header h5 {
+    margin: 21px;
+}
+
+.delete-btn {
+    font-weight: 900;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 9px;
+    border-radius: 9px;
+}
+
+.delete-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+/* --- Scrolldown btn --- */
+
+.btt-button {
+    height: 47px;
+    width: 47px;
+    position: fixed;
+    bottom: 47px;
+    right: 30px;
+    background-color: #00C7FE;
+    font-size: 1.4rem;
+}
+
+.btt-icon{
+    color: white;
+}
+
+.btt-button:hover {
+    font-size: 1.7rem;
+    
+}
+
+.btt-link {
     cursor: pointer;
 }
 
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
-}
 
 
 /* --- Media Queries --- */

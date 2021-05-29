@@ -33,7 +33,7 @@
         <div class="row mt-2 mb-3">
             <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                 <!-- Sort Selector Box -->
-                    <div id="sort-select-wrapper w-50">
+                    <div class="sort-select-wrapper w-50">
                         <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (A-Z)</option>
@@ -99,7 +99,7 @@
                                 {% if request.user.is_superuser %}
                                     <small class="ml-3">
                                         <a href="{% url 'edit_products' product.id %}">Edit</a> | 
-                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                        <a class="text-danger" href="#deleteProduct{{ product.id }}" data-toggle="modal">Delete</a>
                                     </small>
                                 {% endif %}
                             </div>
@@ -131,6 +131,32 @@
                     <hr>
                 </div>
                 {% endif %}
+                <!-- Delete Modal -->
+                <div class="modal fade text-center" id="deleteProduct{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteProduct{{ product.id }}ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- Close button -->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <!-- Modal heading -->
+                                <h5 class="modal-head" id="deleteProduct{{ product.id }}Label">
+                                    Are you sure you want to delete <br>" {{ product.name }} " ? <br>
+                                </h5>
+                                <p>Once this action taken it cannot be reversed.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- Cancel button -->
+                                <button type="button" class="btn text-uppercase site-nav-btn" data-dismiss="modal">Cancel</button>
+                                <!-- Delete button -->
+                                <a id="checkoutButton" href="{% url 'delete_product' product.id %}" class="btn delete-btn">
+                                <span class="text-uppercase">Delete</span>                      
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
