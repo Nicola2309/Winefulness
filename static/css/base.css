@@ -16,7 +16,7 @@ body {
 }
 
 #wine-logo {
-    width: 62%!important;
+    width: 52%!important;
 }
 
 .nav-link {
@@ -122,6 +122,12 @@ body {
     height: auto !important;
 }
 
+.card-img-bag {
+    margin: 51px auto 51px 51px;
+    height: 290px;
+    width: auto;
+}
+
 /* --- Register Page --- */
 
 .allauth-form-inner-content a {
@@ -191,6 +197,14 @@ body {
     margin-bottom: 0.25rem;
 }
 
+.increment-qty {
+    background-color: rgba(208, 37, 55, 1);
+}
+
+.decrement-qty {
+    background-color: rgba(208, 37, 55, .5);
+}
+
 /* --- Footer --- */
 
 .page-footer{
@@ -238,11 +252,22 @@ body {
 /* --- Products.html styles --- */
 
 .btt-button {
-    height: 27px;
-    width: 27px;
+    height: 54px;
+    width: 54px;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 21px;
+    right: 30px;
+    background-color: #00C7FE;
+    color: white;
+}
+
+.btt-button:hover {
+    background-color:  rgb(5, 155, 197);
+}
+
+.btt-button:hover .btt-icon {
+    font-size: 1.7rem;
+    color: white;
 }
 
 .btt-link {
@@ -253,9 +278,6 @@ input[name='q']::placeholder {
     color: #aac6d2;
 }
 
-.card-img{
-    width: 121px;
-}
 
 /* ---- Bootstrap toasts ---- */
 
@@ -275,7 +297,7 @@ input[name='q']::placeholder {
 }
 
 .toast {
-    background-color: rgba(255, 255, 269);
+    background-color: rgba(255, 255, 255);
 }
 
 /* ---- from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ ---- */
@@ -342,7 +364,7 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.allauth-form-inner-content label::not([for='id_remember']) {
+.allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
 }
 
@@ -363,7 +385,7 @@ input[name='q']::placeholder {
     -ms-user-select: none;
     user-select: none;
     background-color: #000;
-    border-color: #000;
+    border: 1px solid transparent;
     padding: .425rem .105rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -377,7 +399,6 @@ input[name='q']::placeholder {
 .allauth-form-inner-content input[type='submit']:hover {
     color: #fff;
     background-color: #222;
-    border-color: #222;
 }
 
 .allauth-form-inner-content a {

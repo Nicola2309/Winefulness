@@ -12,12 +12,12 @@
 }
 
 #id_default_country,
-#id_default_country option::not(:first-child) {
+#id_default_country option:not(:first-child) {
     color: #000;
 }
 
 #id_default_country option:first-child {
-    color: #aac6d2;
+    color: #5d6568;
 }
 
 .card-img{
