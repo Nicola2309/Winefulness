@@ -19,7 +19,7 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """ Send the User a confirmation email of their order """
-        cust_email = order.email
+        customer_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
@@ -31,7 +31,7 @@ class StripeWH_Handler:
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
+            [customer_email]
         )
 
     def handle_event(self, event):
@@ -64,6 +64,7 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
+                profile.default_full_name = shipping_details.name
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
