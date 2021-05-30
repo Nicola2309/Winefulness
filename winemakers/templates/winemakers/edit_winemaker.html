@@ -22,7 +22,8 @@
             <form class="mb-4" method="POST" action="{% url 'edit_winemaker' wm.id %}" id="edit-wm-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <button class="btn subutton-text-color" type="submit">Edit Information</button>
+                <button class="btn subutton-text-color" type="submit">Edit Information
+                </button>
                 <a class="btn site-nav-btn" href="{% url 'winemakers' %}">Cancel</a>
             </form>
         </div>
