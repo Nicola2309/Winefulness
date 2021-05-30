@@ -12,8 +12,9 @@ To return to previous document, please click [here](https://github.com/Nicola230
     - [Admin](#Admin)
 - [Further Testing](#Further-Testing)
 - [Manual Testing](#Manual-Testing)
+- [Bugs](#Bugs)
 - [Compatibility Testing](#Compatibility-Testing)
-    - [Testing with different Browsers](#Testing-with-different-Broswers)
+    - [Testing with different Browsers](#Testing-with-different-Browsers)
     - [Testing With Different Devices](#Testing-With-Different-Devices)
 
 ## Validation
@@ -25,33 +26,38 @@ Doing so brought up a few errors throughout the project related to using Django 
 1. An issue in using '{}' brackets as part of the source for ```<a>``` elements and ```<img>``` elements. This syntax is necessary to access static files and urls and was therefore ignored.
 2. All html templates led to errors that the doctype and language were not declared. As the templates were based on the base.html template where these were addressed, this issue was also ignored.
 3. Some Bootstrap Modals on the site returned errors with their 'aria-labelledby' attribute. This error was related to using templating language to specify the item the modal was related to, so this error had to be ignored.
-4. Further regarding Bootstrap Modals, the validator showed that some buttons had been listed as ```<a>``` elements with no 'href' attribute. This issue was rectified by changing the element to a ```<button>``` element as it should be. Doing so led to no further errors.
-5. The base.html template returned a few errors shown on the screenshot below. However, these errors are related to using templating language in the html document and were therefore ignored as the validator was raising incorrect errors.
-6. It returned error on type='text/javascript' which are not required in the script containing Javascript, I share below the screenshot of the error in 'add_winemaker' page as an example.
+4. The base.html template returned a few errors shown on the screenshot below. However, these errors are related to using templating language in the html document and were therefore ignored as the validator was raising incorrect errors.
+5. It returned a warning on `type='text/javascript'` as not required, I share below the screenshot of the error in 'add_winemaker' page as an example.
 
 
-    - ![base.html validator errors](https://github.com/Nicola2309/Winefulness/tree/master/static/)
+    - ![html-django validator errors](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/html-django-err2.png)
 
-    - ![add_winemaker.html validator error](https://github.com/Nicola2309/Winefulness/tree/master/static/)
+    - ![html-django validator error](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/html-django-err.png)
+
+    -![html-js warning](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/html-js-err.png)
 
 ### CSS
 I checked all CSS code with the [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/). 
 The profile and base templates had the same error, a double column.
 Screenshots of the profile.css page below.
 
-- ![screenshot error validator](https://github.com/Nicola2309/Winefulness/tree/master/static/)
+- ![screenshot error validator](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/css-error.png)
 
-- ![screenshot solved](https://github.com/Nicola2309/Winefulness/tree/master/static/)
+- ![screenshot solved](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/css-no-error.png)
 
 ### JavaScript
 I used [JSHint](https://jshint.com/) to check my JavaScript code.
 The only issue that came up with these checks was related to a forgotten semicolon within a JavaScript file inside the 'Bag' app and the qty_input_script.html. Adding a ';' corrected this issue and returned no further relevant errors.
 
+![js-semicolon example](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/js-semicolon.png)
+
 ### Python
 I used [PEP8](http://pep8online.com) to check the Python code stored within each app.
 This returned indentation errors and warnings that some lines that were too long within a few files. When these were corrected, there were no further errors.
 
-## Testing User Stories From UX Section
+[Back to Top](#table-of-contents)
+
+## Testing User Stories
 
 ### Viewing and Navigation
 
@@ -87,7 +93,7 @@ This returned indentation errors and warnings that some lines that were too long
 ### Sorting and Searching
 
 * As a shopper I want to be able to filter the products so that I can identify the best priced, best rated and by category of my choice.
-    - *When the user arrives in the website, they can navigate to the products page via the navbar. The navbar contains two dropdown menu's, the first dropdown menu will enable them to filter by best priced, best rated, and the second by category of their choice.*
+    - *When the user arrives in the website, they can navigate to the products page via the navbar. The navbar contains two dropdown menu's, the first dropdown menu will enable them to filter by best priced, best rated, category  and the second by a specific category of their choice.*
 
 * As a shopper I would like to be able to search by name or description so that I can buy the Wine with the taste characteristics I want.
     - *When this user arrives in the website, they will notice a searchbar next to the logo if from desktop or a hand lens icon if from smaller screen which when clicked will prompt a searchbar. From the searchbar they can search any paticular query they want*
@@ -106,7 +112,7 @@ This returned indentation errors and warnings that some lines that were too long
 ### Admin
 
 * As the store owner I want to be able to add a product so that I can add new products to the store.
-    - *When the store owner is logged into their profile, they are able to select the my account dropdown from the navbar which presents them with an Product Manager button. This takes them to the add product page where they are able to add new products.*
+    - *When the store owner is logged into their profile, they are able to select the my account dropdown from the navbar which presents them with a Product Manager button. This takes them to the add product page where they are able to add new products.*
 
 * As the store owner I want to be able to edit and update products so that I can change the prices, images, description and ratings.
     - *When the store owner is logged into their account, they are able to navigate to the products page where they will be able to click on the edit button which will be featured on each product which will take them to the edit product page.*
@@ -114,13 +120,15 @@ This returned indentation errors and warnings that some lines that were too long
 * As the store owner I want to be able to delete products so that I can remove products that are no longer available.
     - *When the store owner is logged into their account, they are able to navigate to the products page where they will be able to click on the delete button which will be featured on each product and will delete that particular product.*
 
+[Back to Top](#table-of-contents)
+
 ## Further Testing
 
 * Throughout the development process I used Chromes Developer Tools extensively to test the resposinveness of my site accross all screen sizes.
 
 * I went through the site and manually tested each button and link to ensure that they were all working correctly and linking to the correct places.
 
-### Manual tests
+### Manual testing
 
 #### Features consistent throughout the project
 
@@ -157,7 +165,7 @@ This returned indentation errors and warnings that some lines that were too long
 
 #### Wine Details
 
-- The Edit/Delete buttons buttons under the product name work as expected, the first bringing the user to the edit product form with every component working in it.
+- The Edit/Delete buttons under the product name work as expected, the first bringing the user to the edit product form with every component working in it.
 - The increment/decrement quantity buttons work as expected.
 - The Keep Shoppping or Add to Bag buttons perform the designed actions.
 
@@ -175,27 +183,37 @@ This returned indentation errors and warnings that some lines that were too long
 
 
 #### My Profile
-- Different messages appear at the top of the page depending on if the user has no reservation history, if they have items in their retreat and if they are a returning user with previous bookings.
-- The 'Account details' form updates when a user submits it.
-- If a user has previous reservations, a table appears with a button that links back to the order overview. If they have not yet made a booking, they are again prompted to do so here.
-- All users who have signed in can view the owner's blog posts that are displayed with the newest at the top. However, only the superuser can add, edit and delete previous entries.
+
+- The user can see their personal and delivery data on the left and their order history on the right.
+- Every order number is clickable and the user will be redirected to the past confirmation page containing all the details of the order.
+- At the bottom of the delivery info's of the user there is an update button which allows the user to eventually change delivery info's.
 
 #### Product Management
-- Users who have not yet added any items to their retreat see a message with prompts to the different service pages. These links direct the user to the right pages.
-- Users with items in their retreat can edit the quantity of an item by clicking on the 'edit' modal. However, if they try to go above ten items of the same type they are warned with an error message. 
-- Users can also delete items from their retreat. The confirmation message works as planned to notify the user that it has been done.
-- Clicking on the thumbail image of an item directs the user to that service item's page.
 
-#### Producer Management
-- Users have to complete the form to confirm their reservation.
-- Incorrect card details result in an error message at the bottom of the form.
-- Users who have made previous bookings and have saved their details in the past will notice that they are already filled in. Otherwise, users can select the 'save details' checkbox to successfully save their details.
-- When a booking is complete, users are automatically redirected to the confirmation page.
+- This page can be accessed only by a superuser and it contains a form to add products to the website.
+- The form allows the super user to choose the category, add sku number, name, description, price, rating, image url or select an image by the superuser computer.
+- At the bottom of the form there are two buttons, 'Add Product' that completes the submission of the product into the store and 'Cancel' that brings back the superuser to the products page.
+
+#### Add Wine Producer
+
+- This page can be accessed only by a superuser and it contains a form to add producers to the website.
+- The form allows the super user to choose the Producer Name, a short Heading about them, their Location, the Content that can be about their story or products, image url or select an image by the superuser computer.
+- At the bottom of the form there are two buttons, 'Add Producer' that completes the submission of the producer into the store and 'Cancel' that brings back the superuser to the producers page.
 
 
 #### Authorisation pages
+
 - As these were created with [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html), I tested that they worked as they should. This included that emails were sent if a user registers an account, has forgotten their password or tries to register with a username that already exists. All of these features worked as they should.
-- Trying to access the Sign In/ Sign Up pages when already in session does not work, just as accessing the Sign Out page when not authorised returns the user to the home page.
+- Trying to access the Login/ Register pages when already in session does not work, just as accessing the Logout page when not authorised returns the user to the home page.
+
+[Back to Top](#table-of-contents)
+
+## Bugs
+I found one interesting bug that the due to lack of time I cannot fix in this moment.
+- When the superuser wants to edit a product everything works, but the form gets a validity error if the superuser tries to remove the picture through the 'remove' checkbox and add a new one at the same time.
+    * I tried to debug the code with the help the Mentor and the 'import pdb; pdb.set_trace()' code to see where the code stopped functioning, but the error was something unobvious that needed a big amount of debugging time.
+
+The form works perfectly if the superuser wants to select an image to change it without clicking the checkbox 'Remove'
 
 ## Compatibility Testing
 
@@ -207,6 +225,8 @@ I tested my site on the following broswers to ensure that all users were getting
 * Mozilla Firefox
 * Edge
 * Ecosia
+
+This did not lead to any errors or problems
 
 ### Testing With Different Devices
 
@@ -221,5 +241,8 @@ I tested my site on all of the devices which I had access to which were the foll
 * HP EliteBook
 * Lenovo Thinkpad
 
+This did not lead to any errors or problems.
+
+[Back to Top](#table-of-contents)
 
 To return to previous document, please click [here](https://github.com/Nicola2309/Winefulness/blob/master/README.md).

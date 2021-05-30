@@ -35,9 +35,6 @@ If the users won't make an account the ability to puchase remains and they can p
     - [Local deployment](#Local-Deployment) 
     - [Deploying To Heroku](#Deploying-To-Heroku)
 - [Credits](#Credits)
-    - [Content](#Content)
-    - [Images](#Images)
-- [Credits](#Credits)
 - [Disclaimer](#Disclaimer)
 - [Acknowledgements](#Acknowledgements)
 
@@ -103,6 +100,8 @@ To begin the building of the website I created a list of user stories that would
 
 * As the store owner I want to be able to delete products or Wine Producers so that I can remove products and Wine Producers that are no longer available. 
 
+[Back to Top](#table-of-contents)
+
 ## The Scope Plane
 
 By creating the user stories for my project I considered the features that the site would need to meet the Main Aims of the project and the Users needs.
@@ -131,6 +130,8 @@ By creating the user stories for my project I considered the features that the s
 
 * The checkout page will feature a stripe payment system which will enable users to purchase products securely. After making a purchase users will be provided with confirmation of their order. 
 
+[Back to Top](#table-of-contents)
+
 ## The Structure Plane
 
 As I am using Django to create the site, I will structure each feature into it's own respective app. The site will contain fixed nav bar that will enable users to be able to easily navigate in the website.  
@@ -150,14 +151,14 @@ With the main features and strucutre now in place for the site, it was now time 
 
 The wireframes can be seen below. 
 
+Design on mobile devices:
+![Design for mobile](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/wireframe-mobile.png)
+
 Design on desktop devices:
-![Design for desktop]()
+![Design for desktop](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/wireframe-desktop.png)
 
 Design on tablet devices:
-![Design for tablets]()
-
-Design on mobile devices:
-![Design for mobile]()
+![Design for tablets](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/wireframe-tablet.png)
 
 The entire workspace can be viewed with this [link](https://www.figma.com/file/jc8QKDwQCQ1ecvrTFuogfB/MS's?node-id=0%3A1)
 
@@ -172,7 +173,9 @@ The entire workspace can be viewed with this [link](https://www.figma.com/file/j
     - For the colour scheme of my website I took inspiration from the shades of my logo with a red-winish colour. I used the #BE3644 purple colour which as the primary colour throughout the site which can be seen on the Footer, The Free Delivery Threshold and various buttons. The pink colour #FFEAEA was a shade taken from the [ColorSpace](https://mycolor.space/?hex=%23BE3644&sub=1) website palettes which is used as a background for the forms of the User or Owner performing CRUD functions. The dark shade #523838 is used for the title font in each webpage to really make it stand out against white backgrounds, and as a background for the buttons. 
 
 Here are the color palettes:
-![Color Scheme]()
+![Color Palettes](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/palette1.png)
+
+![Main Color Shades](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/palette2.png)
 
 - ### Typography
     - The main font that is used throughout my website is Bitter and I have chosed Serif to be used as a fallback should the Bitter font not be imported correctly, and Rokkitt for page title, with Serif as a fallback.
@@ -191,6 +194,7 @@ Here are the color palettes:
 - ### Products and Winemakers content
     - All of the content related to products and Winemakers was taken from their websites.
 
+[Back to Top](#table-of-contents)
 
 ## Information Architecture
 
@@ -363,9 +367,13 @@ As part of the Milestone Project 4 it was a requirement that a relational databa
 * [AWS S3 Bucket](https://aws.amazon.com/s3/)
     - I used Amazon's S3 Bucket to store my static files, including local CSS and image files.
 * [Google Fonts](https://fonts.google.com/)
+    - To import the fonts of the project.
 * [Figma](https://www.figma.com/) 
     - Figma helped me design my project, by creating wireframes for desktop, tablet and mobile devices. 
-* [FontAwesome](https://fontawesome.com/) 
+* [FontAwesome](https://fontawesome.com/)
+    - To import icons throughout the project.
+* [Photo](https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4?activetab=pivot:overviewtab)
+    - I used this tool to modify the readme images.
 * [Am I Responsive](http://ami.responsivedesign.is/) 
     - This was used to show how my website is responsive across all screen sizes. 
 * [Free Online HTML Formatter](https://www.freeformatter.com/html-formatter.html) 
@@ -502,7 +510,7 @@ The possible features to implement in a e-commerce website can reach fairly larg
 
 ## Testing
 
-The testing of this project can be read [in this separate document](https://github.com/Nicola2309/Winefulness/blob/master/testing.mg)
+To see the testing done throughout the project click [this link](https://github.com/Nicola2309/Winefulness/blob/master/testing.md)
 
 [Back to Top](#table-of-contents)
 
@@ -648,3 +656,5 @@ Thank you to the following people who helped with support and inspiration:
 - And as always, a big thank you to my family and friends for striking the perfect balance between giving me space and offering their support through long coding sessions.
 
 [Back to Top](#table-of-contents)
+
+To see the testing done throughout the project click [this link](https://github.com/Nicola2309/Winefulness/blob/master/testing.md)
