@@ -197,6 +197,45 @@ body {
     right: 36px;
 }
 
+.icon {
+    margin: auto 5px;
+}
+
+.edit-btn {
+    color: #33b5e5;
+    border: 2px solid #33b5e5;
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.edit-btn:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: #33b5e5;
+    text-decoration: none;
+}
+
+.remove-item {
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.remove-item:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: #dc3545;
+    text-decoration: none;
+}
+
+.update-link {
+    cursor: pointer;
+}
+
+
 /* --- Register Page --- */
 
 .allauth-form-inner-content a {
@@ -285,11 +324,6 @@ input[name='q']::placeholder {
     margin: 51px auto 51px 51px;
     height: 290px;
     width: auto;
-}
-
-.update-link,
-.remove-item {
-    cursor: pointer;
 }
 
 /* --- Winemakers Page --- */
@@ -461,20 +495,29 @@ input[name='q']::placeholder {
     right: 30px;
     background-color: #00C7FE;
     font-size: 1.4rem;
+    text-decoration: none;
 }
 
-.btt-icon{
-    color: white;
-}
-
-.btt-button:hover {
-    font-size: 1.7rem;
-    
-}
-
-.btt-link {
+.btt-link,
+.btt-button:active {
     cursor: pointer;
+    text-decoration: none;
 }
+
+.btt-icon,
+.btt-icon:hover,
+.btt-button:active {
+    color: white;
+    text-decoration: none;
+}
+
+.btt-button:hover,
+.btt-button:active {
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+
 
 
 
