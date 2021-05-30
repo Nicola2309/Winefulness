@@ -1,5 +1,7 @@
 # Milestone Project 4 - Winefulness
 
+![Winefulness Responsive Design](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/responsive.png)
+
 The live project can be seen [here](https://winefulness.herokuapp.com/)
 
 
