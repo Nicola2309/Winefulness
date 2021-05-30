@@ -98,8 +98,8 @@
                                 <!-- Superuser edit/delete Buttons -->
                                 {% if request.user.is_superuser %}
                                     <small class="ml-3">
-                                        <a href="{% url 'edit_products' product.id %}">Edit</a> | 
-                                        <a class="text-danger" href="#deleteProduct{{ product.id }}" data-toggle="modal">Delete</a>
+                                <a class="edit-btn" href="{% url 'edit_products' product.id %}">Edit  <span class="icon"><i class="fas fa-pencil-alt"></i></span></a> | 
+                        <a class="remove-item" href="#deleteProduct{{ product.id }}" data-toggle="modal">Delete<span class="icon"><i class="far fa-trash-alt"></i></span></a>
                                     </small>
                                 {% endif %}
                             </div>
@@ -144,7 +144,7 @@
                                 <h5 class="modal-head" id="deleteProduct{{ product.id }}Label">
                                     Are you sure you want to delete <br>" {{ product.name }} " ? <br>
                                 </h5>
-                                <p>Once this action taken it cannot be reversed.</p>
+                                <p>Once this action is taken it cannot be reversed.</p>
                             </div>
                             <div class="modal-footer">
                                 <!-- Cancel button -->

@@ -34,9 +34,12 @@
     </div>
     <div class="row">
         <div class="col-12 d-flex justify-content-center mb-4 mt-4">
-            <a class="btn" 
+            <a class="btn site-nav-btn" 
                 href="{% url 'winemakers' %}">
-            <span class="site-nav-btn">Back to Winemakers</span>
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+            Back to Winemakers
             </a>
         </div>
     </div>
@@ -85,15 +88,42 @@
             {% if request.user == comment.user %}
             <ul class="mt-5">
                 <li class="d-inline">
-                    <a href="{% url 'edit_comment' winemakers.pk comment.pk %}" class="update-link btn text-font site-nav-btn"><small>
-                    Edit</small>
+                    <a href="{% url 'edit_comment' winemakers.pk comment.pk %}" class="update-link btn text-font edit-btn"><small>
+                    Edit <span class="icon"><i class="fas fa-pencil-alt"></i></span></small>
                     </a>
                 </li>
                 <li class="d-inline">
-                    <a href="{% url 'delete_comment' winemakers.pk comment.pk %}" class="remove-item btn text-bold text-danger"><span><small>Remove</small> <i class="far fa-trash-alt"></i></span>
+            <a href="#delete_comment{{ comment_id.id }}" class="remove-item btn text-bold" data-toggle="modal"><small>Remove</small><span class="icon"><i class="far fa-trash-alt"></i></span>
                     </a>
                 </li>
             </ul>
+            <!-- Delete Modal -->
+    <div class="modal fade text-center" id="delete_comment{{ comment_id.id }}" tabindex="-1" role="dialog"
+        aria-labelledby="delete_comment{{ comment_id.id }}ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- Close button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- Modal heading -->
+                    <h5 class="modal-head" id="delete_comment{{ comment_id.id }}Label">
+                        Are you sure you want to delete your comment ? <br>
+                    </h5>
+                    <p>It will be permanently deleted</p>
+                </div>
+                <div class="modal-footer">
+                    <!-- Cancel button -->
+                    <button type="button" class="btn text-uppercase site-nav-btn" data-dismiss="modal">Cancel</button>
+                    <!-- Delete button -->
+                    <a id="checkoutButton" href="{% url 'delete_comment' winemakers.pk comment.pk %}" class="btn delete-btn">
+                        <span class="text-uppercase">Delete</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
             {% endif %}
         </div>
     </div>
