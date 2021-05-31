@@ -97,7 +97,7 @@
                                 {% endif %}
                                 <!-- Superuser edit/delete Buttons -->
                                 {% if request.user.is_superuser %}
-                                    <small class="ml-3">
+                                    <small class="ml-3 ed-prdcts-btns">
                                 <a class="edit-btn" href="{% url 'edit_products' product.id %}">Edit  <span class="icon"><i class="fas fa-pencil-alt"></i></span></a> | 
                         <a class="remove-item" href="#deleteProduct{{ product.id }}" data-toggle="modal">Delete<span class="icon"><i class="far fa-trash-alt"></i></span></a>
                                     </small>

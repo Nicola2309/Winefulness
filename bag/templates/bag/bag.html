@@ -125,15 +125,10 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0);
-    })
-    </script>
 {% include 'products/includes/qty_input_script.html' %}
 
 <script type="text/javascript">
-    // Update quantity on click
+    // onclick event to update quantity in bag
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
