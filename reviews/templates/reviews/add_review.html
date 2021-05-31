@@ -22,7 +22,7 @@
             <form action="{% url 'add_review' product.id %}" method="POST" class="form mb-2">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <div class="text-right">
+                <div class="text-center">
                     <!-- Submit button -->
                     <button type="submit" class="btn subutton-text-color">Add Review</button>
                     <!-- Cancel button -->

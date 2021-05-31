@@ -1,30 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-    <div class="container-fluid header-container">
-        <div class="row">
-            <div class="col">
-                
-            </div>
+<div class="container-fluid header-container">
+    <div class="row">
+        <div class="col">
         </div>
     </div>
+</div>
 {% endblock %}
-
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col col-md-6 my-auto"  style="bottom: -39px;">
-                <h2 class="hero-title" style="color: white;">
-                    Enjoy the Excellence of Italian Wine
-                </h2>
-                <div class="my-5">
-                    <h4>
-                        <!-- Shop Now btn to products page -->
-                        <a href="{% url 'products' %}" class="btn btn-lg shop-now-btn py-3 text-uppercase">Shop Now</a>
-                    </h4>
-                </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-md-6 my-auto"  style="bottom: -39px;">
+            <h2 class="hero-title" style="color: white;">
+                Enjoy the Excellence of Italian Wine
+            </h2>
+            <div class="my-5">
+                <h4>
+                    <!-- Shop Now btn to products page -->
+                    <a href="{% url 'products' %}" class="btn btn-lg shop-now-btn py-3 text-uppercase">Shop Now</a>
+                </h4>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

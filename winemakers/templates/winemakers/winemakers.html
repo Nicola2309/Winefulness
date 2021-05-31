@@ -30,7 +30,7 @@
                 {% else %}
                 <a href="{% url 'winemaker_detail' wm.id %}">
                 <img class="mt-4 mb-5 pr-4 winemaker-image" src="{{ MEDIA_URL }}noimage.png" 
-                        alt="{{ wm.producer_name }}">
+                    alt="{{ wm.producer_name }}">
                 </a>
                 {% endif %}
             </div>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-12">
                 <a class="btn site-nav-btn float-right" href="{% url 'winemaker_detail' wm.id %}">
-                    <span class="text-bold">Read More</span>
+                <span class="text-bold">Read More</span>
                 </a>
                 {% if request.user.is_superuser %}
                 <a class="edit-btn" href="{% url 'edit_winemaker' wm.id %}">Edit <span class="icon"> <i class="fas fa-pencil-alt"></i></span></a>
@@ -62,7 +62,7 @@
                 <div class="modal-header">
                     <!-- Close button -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                     </button>
                     <!-- Modal heading -->
                     <h5 class="modal-head" id="deleteWinemaker{{ wm.id }}Label">
@@ -75,12 +75,12 @@
                     <button type="button" class="btn text-uppercase site-nav-btn" data-dismiss="modal">Cancel</button>
                     <!-- Delete button -->
                     <a id="checkoutButton" href="{% url 'delete_winemaker' wm.id %}" class="btn delete-btn">
-                        <span class="text-uppercase">Delete</span>
+                    <span class="text-uppercase">Delete</span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
-    </div>
-    {% endblock %}
+</div>
+{% endblock %}

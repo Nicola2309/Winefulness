@@ -4,7 +4,7 @@
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto">Success!</strong>
         <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close"><stro
-            <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="toast-body bg-white">
@@ -15,35 +15,35 @@
             </div>
         </div>
     </div>
-
-
-{% if grand_total and not on_profile_page %}
+    {% if grand_total and not on_profile_page %}
     <!-- Bag Content Info -->
     <p class="title-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
     <div class="bag-notification-wrapper">
         {% for item in bag_items %}
-            <div class="row">
-                <div class="col-3 my-1">
-                    {% if item.product.image %}
-                    <img class="toast-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                    {% else %}
-                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                    {% endif %}
-                </div>
-                <div class="col-9">
-                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                </div>
+        <div class="row">
+            <div class="col-3 my-1">
+                {% if item.product.image %}
+                <img class="toast-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                {% else %}
+                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                {% endif %}
             </div>
+            <div class="col-9">
+                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
     <div class="row">
         <div class="col">
             <!-- Free Delivery Threshold Logic -->
-            <strong><p class="mt-3 mb-1 text-black">
-                Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
-                <span class="float-right">€{{ total|floatformat:2 }}</span>
-            </p></strong>
+            <strong>
+                <p class="mt-3 mb-1 text-black">
+                    Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
+                    <span class="float-right">€{{ total|floatformat:2 }}</span>
+                </p>
+            </strong>
             {% if free_delivery_delta > 0 %}
             <p class="mb-0 p-2 bg-warning shadow-sm text-black text-center">
                 Add Products for <strong>€{{ free_delivery_delta }}</strong> to get free delivery!
@@ -51,12 +51,12 @@
             {% endif %}
             <!-- Secure Checkout Button -->
             <a href="{% url 'view_bag' %}" class="btn btn-block rounded-0 btn-success">
-                <span class="text-uppercase">Go To Secure Checkout</span>
-                <span class="icon">
-                    <i class="fas fa-lock"></i>
-                </span>
+            <span class="text-uppercase">Go To Secure Checkout</span>
+            <span class="icon">
+            <i class="fas fa-lock"></i>
+            </span>
             </a>
         </div>
     </div>
-{% endif %}
+    {% endif %}
 </div>
