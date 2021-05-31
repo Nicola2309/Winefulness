@@ -5,7 +5,9 @@ from django.db.models import Avg
 
 
 class Category(models.Model):
-
+    """
+    Category model
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -20,6 +22,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    Products Form Fields
+    """
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, default='',
@@ -35,7 +40,7 @@ class Product(models.Model):
 
     def calculate_rating(self):
         """
-        Calculate rating from reviews
+        Calculate rating from reviews, as understood in the code of my fellow student Gregory Lewis project 'https://github.com/Gregory4321/cooks_finest'
         """
         self.rating = self.reviews.aggregate(Avg("review_rating"))[
             'review_rating__avg']

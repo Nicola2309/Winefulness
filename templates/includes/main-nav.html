@@ -1,14 +1,17 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
+        <!-- Home button -->
         <li class="nav-item">
             <a class="title-font text-bold nav-link mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
+        <!-- All Products button -->
         <li class="nav-item dropdown">
             <a href="#" class="title-font text-bold nav-link mr-5" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
+            <!-- Products dropdown -->
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
@@ -16,11 +19,12 @@
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
-
+        <!-- Wines button -->
         <li class="nav-item dropdown">
             <a href="#" class="title-font text-bold nav-link mr-5" id="wines-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wines
             </a>
+            <!-- Wines Category=ies dropdwon -->
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?categories=red" class="dropdown-item">Red</a>
                 <a href="{% url 'products' %}?categories=white" class="dropdown-item">White</a>
@@ -28,7 +32,7 @@
                 <a href="{% url 'products' %}?categories=red,white,sparkling" class="dropdown-item">All Wines</a>
             </div>
         </li>
-
+        <!-- Our Wine Producers link -->
         <li class="nav-item">
             <a href="{% url 'winemakers' %}" class="title-font text-bold nav-link mr-5" id="wm-link" aria-haspopup="true">
                 Our Wine Producers

@@ -500,7 +500,7 @@ input[name='q']::placeholder {
 
 /* --- Scrolldown btn --- */
 
-.btt-button {
+.up-button {
     height: 47px;
     width: 47px;
     position: fixed;
@@ -511,21 +511,21 @@ input[name='q']::placeholder {
     text-decoration: none;
 }
 
-.btt-link,
-.btt-button:active {
+.up-btt-link,
+.up-button:active {
     cursor: pointer;
     text-decoration: none!important;
 }
 
 .btt-icon,
 .btt-icon:hover,
-.btt-button:active {
+.up-button:active {
     color: white;
     text-decoration: none;
 }
 
-.btt-button:hover,
-.btt-button:active {
+.up-button:hover,
+.up-button:active {
     font-size: 1.7rem;
     text-decoration: none;
 }
@@ -647,7 +647,7 @@ input[name='q']::placeholder {
         font-size: 3rem;
     }
 
-    .btt-button {
+    .up-button {
         height: 39px;
         width: 39px;
         right: 8px;
@@ -684,7 +684,7 @@ input[name='q']::placeholder {
         font-size: small;
     }
 
-    .btt-button {
+    .up-button {
         bottom: 63px;
     }
 
@@ -716,7 +716,7 @@ input[name='q']::placeholder {
         font-size: x-small;
     }
 
-    .btt-button {
+    .up-button {
         height: 32px;
         width: 32px;
     }

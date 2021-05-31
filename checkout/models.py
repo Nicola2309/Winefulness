@@ -11,6 +11,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    Order model
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -63,6 +66,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Order line item model
+    """
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
@@ -76,7 +82,7 @@ class OrderLineItem(models.Model):
                                          )
 
     def save(self, *args, **kwargs):
-        """ Override the original save method """
+        """ Override the original save method, set the line item total, update order total """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 

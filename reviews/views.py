@@ -7,7 +7,9 @@ from profiles.models import UserProfile
 from .forms import ReviewForm
 from .models import Review
 
-
+"""
+<!-- Code and functionality inspired from my fellow student Gregory Lewis project 'https://github.com/Gregory4321/cooks_finest' 
+"""
 @login_required
 def add_review(request, product_id):
     """

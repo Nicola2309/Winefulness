@@ -1,7 +1,9 @@
 from django.db import models
 from profiles.models import UserProfile
 
-
+"""
+<!-- Code and functionality inspired from my fellow student Gregory Lewis project 'https://github.com/Gregory4321/cooks_finest' 
+"""
 class Review(models.Model):
     """
     Review models.py

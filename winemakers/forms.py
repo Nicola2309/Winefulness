@@ -4,7 +4,9 @@ from .models import Winemakers, Comments
 
 
 class WinemakersForm(forms.ModelForm):
-
+    """
+    Winemakers details form
+    """
     class Meta:
         model = Winemakers
         fields = '__all__'

@@ -3,6 +3,9 @@ from profiles.models import User
 
 
 class Winemakers(models.Model):
+    """
+    Winemakers model
+    """
     class Meta:
         verbose_name_plural = 'Winemakers'
 
@@ -19,6 +22,9 @@ class Winemakers(models.Model):
 
 
 class Comments(models.Model):
+    """
+    Comments model
+    """
     winemakers = models.ForeignKey(
         'Winemakers', null=True, blank=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(

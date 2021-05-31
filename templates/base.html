@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     {% block meta %}
+    <!-- Fundamental Meta tags -->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,11 +13,12 @@
     {% endblock %}    
 
     {% block corecss %}
+        <!-- Google fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Rokkitt&display=swap" rel="stylesheet">
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Rubik&display=swap" rel="stylesheet">
+        <!-- CSS static file -->
         <link rel="stylesheet" href="{% static '../static/css/base.css' %}">
     {% endblock %}
 
@@ -24,7 +26,9 @@
     {% endblock %}
 
     {% block corejs %}
+    <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/3c78141292.js" crossorigin="anonymous"></script>
+        <!-- jQuery, Popper.js and Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -34,18 +38,20 @@
 
     {% block extra_js %}
     {% endblock %}
-
+    <!-- Header -->
     <title>Winefulness</title>
   </head>
   <body>
       <header class="container-fluid">
           <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
               <div class="col-12 col-lg-4 text-center text-lg-left">
+                  <!-- Logo -->
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <img src="{{ MEDIA_URL }}logo1-transpa.png" alt="company logo" id="wine-logo">
                 </a>
               </div>
               <div class="col-12 col-lg-4 my-auto">
+                  <!-- Search Bar -->
                   <form method="GET" action="{% url 'products' %}">
                       <div class="input-group w-100">
                           <input type="text" class="form-control border border-black rounded-0" name="q" placeholder="Search the Cellar">
@@ -59,8 +65,10 @@
                       </div>
                   </form>
               </div>
+              <!-- Icons -->
               <div class="col-12 col-lg-4 my-auto">
                   <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                      <!-- My account -->
                     <li class="list-inline-item dropdown">
                         <a href="#" class="nav-link" id="search-ops" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -69,6 +77,7 @@
                                     <p class="my-0">My Account</p>
                             </div>
                         </a>
+                        <!-- dropdown of 'My account' -->
                         <div class="dropdown-menu border-0" aria-labelledby="search-ops">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
@@ -83,6 +92,7 @@
                             {% endif %}
                         </div>
                     </li>
+                    <!-- Shopping bag with calculated grand total value, if any -->
                     <li class="list-inline-item">
                         <a href="{% url 'view_bag' %}" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link">
                             <div class="text-center">
@@ -100,6 +110,7 @@
                   </ul>
               </div>
           </div>
+          <!-- Navbar -->
           <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,13 +120,14 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
           </div>
+          <!-- Convenience Banner, Free Delivery Threshold -->
           <div id="convenience-banner" class="row text-center">
               <div class="col text-white red-bg">
                   <h4 class="my-1" style="color: white;">Free delivery on orders over €{{ free_delivery_threshold }}</h4>
               </div>
           </div>
       </header>
-
+      <!-- Toast Messages -->
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -147,6 +159,7 @@
                <div class="col s12">
                   <h5>Follow us on Social Media</h5>
                </div>
+               <!-- Social Icons -->
                <div class="col s12 align">
                   <a class="social-icon" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
                   <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
@@ -156,8 +169,8 @@
             </div>
          </div>
          <!-- Back To Top Button -->
-        <div class="btt-button shadow-sm rounded-0 border border-black">
-            <a href="" class="btt-link d-flex h-100">
+        <div class="up-button shadow-sm rounded-0 border border-black">
+            <a href="" class="up-btt-link d-flex h-100">
             <i class="fas fa-arrow-up btt-icon mx-auto my-auto"></i>
             </a>
         </div>
@@ -171,6 +184,7 @@
       </footer>
 
     {% block postloadjs %}
+    <!-- Show Toast function JS -->
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
@@ -183,14 +197,14 @@
                 //Check to see if the window is top if not then display button
                 $(window).scroll(function () {
                     if ($(this).scrollTop() > 200) {
-                        $('.btt-button').fadeIn();
+                        $('.up-button').fadeIn();
                     } else {
-                        $('.btt-button').fadeOut();
+                        $('.up-button').fadeOut();
                     }
                 });
             
                 //Click event to scroll to top
-                $('.btt-link').click(function (e) {
+                $('.up-btt-link').click(function (e) {
                     $('html, body').animate({ scrollTop: 0 }, 800);
                     return false;
                 });

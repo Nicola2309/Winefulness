@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block page_header %}
+<!-- Code inspired by the news section of the project from my fellow student Joshwa Thompson https://github.com/Jthomp1993/ms4-premier-league-store/tree/master/cart -->
 <div class="container-fluid mb-3">
     <div class="row">
         <div class="col-12 col-md-7 col-lg-9">
             <hr>
+            <!-- Page Header -->
             <h2 class="mt-3 mb-text-white text-uppercase">Producers Management</h2>
             <hr>
         </div>
@@ -13,6 +15,7 @@
 {% endblock %}
 {% block content %}
 <div class="overlay"></div>
+<!-- Edit Producer Info's form -->
 <div class="container mt-3 mb-4">
     <div class="row">
         <div class="col-12 col-md-6 offset-md-3 text-center">
@@ -22,8 +25,10 @@
             <form class="mb-4" method="POST" action="{% url 'edit_winemaker' wm.id %}" id="edit-wm-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
+                <!-- Edit Button -->
                 <button class="btn subutton-text-color" type="submit">Edit Information
                 </button>
+                <!-- Cancel Button -->
                 <a class="btn site-nav-btn" href="{% url 'winemakers' %}">Cancel</a>
             </form>
         </div>
@@ -33,8 +38,8 @@
 {% block postloadjs %}
 {{ block.super }}
 <script>
-    $('#new-image').change(function() {
-        var file = $('#new-image')[0].files[0];
+    $('#new-img').change(function() {
+        var file = $('#new-img')[0].files[0];
         $('#filename').text(`Image will be set to: ${file.name}`);
     });
 </script>

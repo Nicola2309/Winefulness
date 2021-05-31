@@ -93,7 +93,9 @@ def edit_winemaker(request, winemaker_id):
 
 @login_required
 def delete_winemaker(request, winemaker_id):
-    """ Delete a Producer from the store """
+    """ 
+    Delete a Producer from the store 
+    """
     if not request.user.is_superuser:
         messages.error(request,
                        'Sorry only store owners are allowed to do that!')
@@ -172,7 +174,7 @@ def edit_comment(request, winemaker_id, comment_id):
 
 @login_required
 def delete_comment(request, winemaker_id, comment_id):
-    """ A view to delete a comment """
+    """ A view to delete a comment, inspired by Joshwa Thompson https://github.com/Jthomp1993/ms4-premier-league-store/tree/master/cart """
     winemakers = get_object_or_404(Winemakers, pk=winemaker_id)
     comment = get_object_or_404(Comments, winemakers=winemakers, pk=comment_id)
 

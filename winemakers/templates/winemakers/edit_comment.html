@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
+<!-- Code inspired by the news section of the project from my fellow student Joshwa Thompson https://github.com/Jthomp1993/ms4-premier-league-store/tree/master/cart -->
 <div class="overlay"></div>
+<!-- Comment Text Area-->
 <div class="container form-background">
 <div class="container mb-5 mt-5">
     <div class="row">
@@ -13,6 +15,7 @@
             <form class="mb-4" method="POST" action="">
                 {% csrf_token %}
                 {{ comment_form|crispy }}
+                <!-- Submit Button -->
                 <button class="btn subutton-text-color" type="submit">Submit</button>
             </form>
         </div>

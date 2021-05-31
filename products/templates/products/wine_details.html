@@ -15,6 +15,7 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
+                <!-- Product Image url or no image function -->
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -27,6 +28,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
+            <!-- Wine Details Elements -->
             <div class="wine-details-container mb-5 mt-5">
                 <p class="mb-0">{{ product.name }}</p>
                 <p class="lead mb-0 font-weight-bold text-left">€{{ product.price }}</p>
@@ -42,20 +44,24 @@
                 {% else %}
                     <small class="text-muted">No Rating</small>
                 {% endif %}
+                <!-- Superuser edit/delete Buttons-->
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
                         <a class="edit-btn" href="{% url 'edit_products' product.id %}">Edit  <span class="icon"><i class="fas fa-pencil-alt"></i></span></a> | 
                         <a class="remove-item" href="#deleteProduct{{ product.id }}" data-toggle="modal">Delete<span class="icon"><i class="far fa-trash-alt"></i></span></a>
                     </small>
                 {% endif %}
+                <!-- Product description -->
                 <p class="mt-3">{{ product.description }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12">
+                            <!-- Product Quantity -->
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
                                 <div class="input-group">
+                                    <!-- Inc/dec number of objects box -->
                                     <div class="input-group-prepend">
                                         <button class="decrement-qty btn rounded-0" data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                             <span class="icon">
@@ -76,12 +82,14 @@
                         </div>
 
                         <div class="col-12">
+                            <!-- Keep Shopping Button -->
                             <a href="{% url 'products' %}" class="btn mt-5  site-nav-btn">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
+                            <!-- Add to Bag Button -->
                             <input type="submit" class="btn subutton-text-color mt-5 text-uppercase" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
