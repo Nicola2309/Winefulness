@@ -40,7 +40,9 @@ class Product(models.Model):
 
     def calculate_rating(self):
         """
-        Calculate rating from reviews, as understood in the code of my fellow student Gregory Lewis project 'https://github.com/Gregory4321/cooks_finest'
+        Calculate rating from reviews, as understood in the code of my \
+        fellow student Gregory Lewis project \
+        'https://github.com/Gregory4321/cooks_finest'
         """
         self.rating = self.reviews.aggregate(Avg("review_rating"))[
             'review_rating__avg']
