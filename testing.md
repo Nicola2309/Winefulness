@@ -29,11 +29,13 @@ Doing so brought up a few errors throughout the project related to using Django 
 4. The base.html template returned a few errors shown on the screenshot below. However, these errors are related to using templating language in the html document and were therefore ignored as the validator was raising incorrect errors.
 5. It returned a warning on `type='text/javascript'` as not required, I share below the screenshot of the error in 'add_winemaker' page as an example.
 
-
+Django related errors in html:
     - ![html-django validator errors](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/html-django-err2.png)
 
+Another Django related errors in html:
     - ![html-django validator error](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/html-django-err.png)
 
+Javascript related warning in html:
     -![html-js warning](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/html-js-err.png)
 
 ### CSS
@@ -41,14 +43,17 @@ I checked all CSS code with the [W3C Markup Validation Service](https://jigsaw.w
 The profile and base templates had the same error, a double column.
 Screenshots of the profile.css page below.
 
+CSS error:
 - ![screenshot error validator](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/css-error.png)
 
+CSS error solved:
 - ![screenshot solved](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/css-no-error.png)
 
 ### JavaScript
 I used [JSHint](https://jshint.com/) to check my JavaScript code.
 The only issue that came up with these checks was related to a forgotten semicolon within a JavaScript file inside the 'Bag' app and the qty_input_script.html. Adding a ';' corrected this issue and returned no further relevant errors.
 
+Javascript semicolon missing:
 ![js-semicolon example](https://github.com/Nicola2309/Winefulness/blob/master/media/readme_imgs/js-semicolon.png)
 
 ### Python
